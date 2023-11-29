@@ -3,3 +3,22 @@
  > npx playwright test
 - Ejecuta un conjunto de tests
  > npx playwright test <ruta>:[linea comando]
+
+# Locators:
+Los locators representan una forma de encontrar elementos dentro de una página en cualquier momento
+- page.getByRole(): Para localizar atributos implícitos o explícitos
+- page.getByText(): Localizar por contenido de texto
+- page.getByLabel(): Localizar un form control asociado con el texto de un label
+- page.getByPlaceholder(): Para localizar un input por placeholder
+- page.getByAllText(): Para localizar un elemento, usualmente imágenes por su texto alt
+- page.getByTitle: Localizar un elemento por su atributo title
+- page.getByTestId(): Localizar un elemento basado en su atributo data-testid
+
+# Selector
+Es una expresión para identificar y seleccionar elementos específicos
+> await page.locator('a:has-text("Get started")').click();
+
+# PickLocator
+Es una extension para seleccionar un elemento de una página web
+
+# Assertions
