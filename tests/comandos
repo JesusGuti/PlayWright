@@ -1,0 +1,5 @@
+# Comandos para playwright
+- Ejecuta todos los test
+ > npx playwright test
+- Ejecuta un conjunto de tests
+ > npx playwright test <ruta>:[linea comando]

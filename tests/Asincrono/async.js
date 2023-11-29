@@ -17,6 +17,7 @@
 // // }, 1000)
 // // console.log("fin") 
 
+
 // //Promesas
 // // Estado pendiente | resuelto | error
 // const promesa = new Promise(function(resolve,reject){
@@ -52,7 +53,7 @@
 //      console.log(error)
 // })
 
-/**ASYNC/AWAIT**/
+/**ASYNC/AWAIT*
 async function getDitto(){
    try{
      const response = await fetch("https://pokeapi.co/api/v2/pokemon/")   
@@ -63,4 +64,26 @@ async function getDitto(){
    }
 }
 
-getDitto()
+getDitto()*/
+
+function timeout(fn,ms){
+  return new Promise(function(resolve){
+    return setTimeout(function(){
+      fn()
+      resolve()
+    },ms)
+  })
+}
+
+async function test(){
+  console.log('Inicio')
+  await timeout(function(){
+    console.log('Uno')
+  },2000)
+  await timeout(function(){
+    console.log('Dos')
+  },1000)
+  console.log('Fin')
+}
+
+test()
