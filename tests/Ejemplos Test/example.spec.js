@@ -55,6 +55,9 @@ test("Verificar que la palabra enable este presente", async ({page}) => {
 
 test.describe("Selectores", () =>{
   test("Usando getByLabel",async ({page}) =>{
+      const checkbox = page.getByRole('checkbox')
+      expect(checkbox).toBeChecked()
+    
       await page.goto("https://uitestingplayground.com/textinput")
       const label = await page.getByLabel('Set New Button Name')
       await expect(label).toBeVisible()

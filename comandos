@@ -22,3 +22,29 @@ Es una expresión para identificar y seleccionar elementos específicos
 Es una extension para seleccionar un elemento de una página web
 
 # Assertions
+Usan la función expect() para verificar si algo cumple
+- expect(locator).toBeAttached()
+- expect(locator).toBeChecked()
+- expect(locator).toBeDisabled()
+- expect(locator).toBeEditable()
+- expect(locator).toBeEmpty()
+- expect(locator).toBeEnable()
+- expect(locator).toBeFocused()
+- expect(locator).toBeHidden()
+- expect(locator).toBeinViewPort()
+- expect(locator).toBeVisible()
+- expect(locator).toContainText()
+- expect(locator).toHaveAttribute()
+- expect(locator).toHaveClass()
+- expect(locator).toHaveCount()
+- expect(locator).toHaveCSS()
+- expect(locator).toHaveId()
+- expect(locator).toHaveJSProperty()
+- expect(locator).toHaveText()
+- expect(locator).toHaveValue()
+
+# Codegen 
+Es una extensión que sirve
+
+
+
