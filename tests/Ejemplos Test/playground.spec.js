@@ -1,20 +1,20 @@
 const { test, expect } = require('@playwright/test');
 
+test.afterEach(async ({page}) =>{
+     await page.close()
+})
+
 test.describe("Pruebas de Sample App",() =>{
      test("Verificar que login muestre error sin ningún usuario",async({page}) =>{
           //Vamos a la página
-          await page.goto("https://uitestingplayground.com")
+          await page.goto('http://uitestingplayground.com')
           //Vamos a localizar un link con el nombre Sample App
           const link = await page.getByRole('link',{name:'Sample App'})
+          await page.waitForLoadState('domcontentloaded')
           await link.click()
-          
-          //Vamos a esperar antes de hacer click
-          await page.waitForTimeout(2000)
           //Vamos a localizar el botón con el nombre "Log in"
           const button = await page.getByRole('button',{name:'Log in'})
           await button.click()
-
-
           //Vamos a obtener un mensaje de error que debe aparecer en el DOM debido al click
           const errorMessage = await page.getByText('Invalid username/password')     
           await expect(errorMessage).toBeVisible()
@@ -22,7 +22,7 @@ test.describe("Pruebas de Sample App",() =>{
      })
 
      test("Verificar que login funciones con contraseña valida",async ({page}) =>{
-          await page.goto("https://uitestingplayground.com")
+          await page.goto('http://uitestingplayground.com')
           await page.getByRole('link',{name: 'Sample App'}).click()
           //Vamos a esperar antes de hacer click
           await page.waitForLoadState('domcontentloaded')
@@ -33,7 +33,7 @@ test.describe("Pruebas de Sample App",() =>{
           await page.locator('input[name="Password"]').fill('pwd')
           await page.getByRole('button',{name:'Log in'}).click()
           const successMessage = await page.locator("#loginstatus")
-          await expect(successMessage).toHaveClass("text-danger")
+          await expect(successMessage).toHaveClass("text-success")
           await expect(successMessage).toHaveCSS('color','rgb(40, 167, 69)')
      })
 })
