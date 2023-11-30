@@ -4,6 +4,13 @@
 - Ejecuta un conjunto de tests
  > npx playwright test <ruta>:[linea comando]
 
+- Ejecuta un test por nombre
+ > npx playwright test -g <nombre>
+
+- Mostrar reporte
+ > npx playwright test
+
+
 # Locators:
 Los locators representan una forma de encontrar elementos dentro de una página en cualquier momento
 - page.getByRole(): Para localizar atributos implícitos o explícitos
@@ -46,5 +53,15 @@ Usan la función expect() para verificar si algo cumple
 # Codegen 
 Es una extensión que sirve
 
+# Wait For
+Sirve para esperar 
+- 
+     > page.waitForTimeout(2000) //Esperar por tiempo
+- Estado cargado
+     > page.waitForLoadState()
+          > domcontentload: cargado el dom
+          > load
+          > networkidle
 
 
+# Hooks
