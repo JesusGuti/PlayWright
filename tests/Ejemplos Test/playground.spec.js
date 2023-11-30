@@ -21,7 +21,7 @@ test.describe("Pruebas de Sample App",() =>{
           await expect(errorMessage).toHaveCSS('color','rgb(220, 53, 69)')
      })
 
-     test("Verificar que login funciones con contraseña valida",async ({page}) =>{
+     test("Verificar que login funcione con contraseña valida",async ({page}) =>{
           await page.goto('http://uitestingplayground.com')
           await page.getByRole('link',{name: 'Sample App'}).click()
           //Vamos a esperar antes de hacer click
