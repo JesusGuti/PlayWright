@@ -1,33 +1,10 @@
 const { expect } = require('@playwright/test')
 const { createBdd } =require('playwright-bdd')
+const {test} = require('../../Pages/fixtures')
+const { Given, When, Then } = createBdd(test);
 
-const { Given, When, Then } = createBdd();
-
-let browser
-let page
-
-// setDefaultTimeout(60 * 1000)
-// BeforeAll(async() =>{
-//      browser = await chromium.launch({headless:false})
-// })
-
-// Before(async() =>{
-//      page = await browser.newPage()
-// })
-//     //Para abrir una instancia de chrome
-// page = await browser.newPage()
-// page = await browser.newPage()
-// After(async() =>{
-//      await page.close()
-// })
-
-// AfterAll(async() =>{
-//      await browser.close()
-// })
-
-Given('el usuario está en la página de inicio de sesión', async function({page}){
-     await page.goto('http://uitestingplayground.com')
-     await page.getByRole('link',{name:'Sample App'}).click()
+Given('el usuario está en la página de inicio de sesión', async function({uitestingplayground}){
+     await uitestingplayground.goToSampleApp()
      await page.waitForLoadState('domcontentloaded')
 });
        
